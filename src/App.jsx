@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <div className="">
-      <Navbar/>
+      <Navbar data= {songData}/>
       <div className="flex items-center flex-row flex-wrap">
         {songData.map((obj, index) => (
           <Card key={index} data={obj} index={index}  handleClick = {handleClick} />

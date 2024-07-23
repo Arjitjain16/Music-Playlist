@@ -1,5 +1,5 @@
 
-const Navbar = () => {
+const Navbar = ({data}) => {
   return (
     <nav className="w-full px-16 py-3 flex item center justify-between">
         <div>
@@ -7,7 +7,9 @@ const Navbar = () => {
         </div>
         <div className="bg-orange-600 flex item-center gap-2 py-1 px-2 rounded-xl text-zinc-100 font-bold">
             <h1>Favorites</h1>
-            <h3>2</h3>
+            <h3>
+              {data.filter(item => item.adder).length}
+            </h3>
         </div>
     </nav>
   )
