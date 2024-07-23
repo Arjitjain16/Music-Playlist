@@ -39,12 +39,21 @@ const App = () => {
    
   const [songData, setsongData] = useState(data)
 
+  const handleClick = (index) => {
+    setsongData(prev =>
+      prev.map((item, itemindex) =>
+        itemindex === index ? { ...item, adder: !item.adder } : item
+      )
+    );
+  };
+  
+
   return (
     <div className="">
       <Navbar/>
       <div className="flex items-center flex-row flex-wrap">
-        {songData.map((obj) => (
-          <Card key={obj.name} data={obj} />
+        {songData.map((obj, index) => (
+          <Card key={index} data={obj} index={index}  handleClick = {handleClick} />
         ))}
       </div>
     </div>
